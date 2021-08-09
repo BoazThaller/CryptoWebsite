@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  transition: 0.8s;
+}
+
+#myPicture {
+  margin-bottom: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+
+}
+
+#imgDiv {
+  display: flex;
+  justify-content: center;
+}
+
+a:hover {
+  background-color: rgb(91, 235, 72);
+  transition: 0.8s;
+}
+#search-btn {
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.coinCard {
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  background-color: darkgray;
+}
+
+.moreInfoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.moreInfo {
+  border-radius: 8px;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.moreInfo:focus {
+  outline: none;
+}
+.card {
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: none;
+  background-color: lightgray;
+}
+
+#coinSymbol {
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+#coinName {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+
+#symbolAndCheckBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(31, 167, 31);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(31, 167, 31);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 70px; */
+}
+
+#mainContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.canvasjs-chart-credit {
+  display: none;
+}
+.loader {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: none;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-color: black;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner-border {
+  display: none;
+  margin-top: 5px;
+}
+
+.modalBtn {
+  margin-top: 10px;
+  color: black;
+  background-color: darkgray;
+  border-radius: 15px;
+}
+
+#myModal {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+}
+
+#modalCard {
+  text-align: center;
+  height: 90px;
+  width: 150px;
+  margin: 10px;
+}
+
+#modalCardBody {
+  text-align: center;
+}
+
+#modalDiv {
+  text-align: center;
+  display: inline-block;
+  border: none;
+}
+
+#modalCoinName {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.modal-content {
+  box-shadow: 0 30px 35px rgb(7 7 12 / 51%), 0 5px 15px rgb(0 0 0 / 50%);
+}
+
+
+.text-info {
+  display: block;
+  padding: 8px;
+  color: grey !important;
+  background-color: black;
+  text-decoration: bold;
+  border-radius: 8px;
+}
+
+img {
+  height: 50px;
+}
+
+#home {
+  background-color: #1fa71f;
+}
+
+.bg-dark {
+    background: linear-gradient(to right, #000000, #434343)!important;
+}
+
+.about {
+    width: 800px;
+    margin-top: 52px;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid black;
+    
+}
+
+#aboutHeadline {
+  margin: 10px;
+  text-align: center;
+}
+
+#aboutMyInfo {
+  margin: 25px;
+  text-align: center;
+}
+
+#aboutMyProject{
+  margin: 25px;
+  text-align: center;
+
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 576px) {
+.modal-dialog {
+    max-width: 890px;
+    margin: 1.75rem auto;
+}}
+
+#chartContainer{
+  margin-top: 50px;
+}
+
+#liveReportsCoins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  border: 3px solid white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.text-warning {
+  color: red;
+}
+
+#modalDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+button.moreInfo.collapsed:before {
+  content: "More info";
+  display: block;
+}
+button.moreInfo:before {
+  content: "Show less";
+  display: block;
+}
+
+.canvasjs-chart-canvas {
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #container {
+    margin-top: 0px;
+  }
+
+  .nav-item {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  #search-input {
+    width: 80%;
+  }
+
+  #search-btn {
+    width: 20%;
+  }
+
+  .form-inline {
+    flex-flow: row;
+  }
+
+  #mainContainer {
+    width: 70%;
+  }
+
+  .coinCard {
+    width: 100%;
+  }
+
+  .navbar-dark .navbar-nav .nav-link{
+    background: none;
+  }
+
+  #liveReportsCoins {
+    border: none;
+    margin-top: 10px;
+  }
+
+  .text-warning {
+    display: contents;
+  }
+
+  .modal-body {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+  }
+
+  #modalCard {
+    height: 50px;
+    width: 120px;
+    align-items: center;
+  }
+
+  #modalCardBody {
+    gap: 10px;
+    display: flex;
+  }
+
+  .modal-title {
+    font-size: 15px;
+  }
+
+  #b {
+    display: contents;
+  }
+
+  #modalDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+  }
+}

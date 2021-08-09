@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  
+  <body>
+
+
+    <!-- navbar -->
+    <div id="navbar_top">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" onclick="onHomeClicked()" href="#" id="home">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" onclick="onAboutClicked()" href="#" id="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="onLiveReportsClicked()" href="#LiveReports" id="liveReports">Live Reports</a>
+            </li>
+          </ul>
+      
+          <span id="errorMsg" class="text-warning mr-3"></span>
+          <div>
+            <div class="form-inline">
+              <input type="search" id="search-input" class="form-control mr-sm-2" aria-label="" placeholder="search" />
+              <button class="btn my-2 my-sm-0" id="search-btn" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- navbar -->
+
+
+    <!-- modal -->
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" id="modalDialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Oh no... You can only select 5 coins</h5>
+          </div>
+          <div class="modal-body" id="modalBody">
+            <p id="modalBody">To add this coin, you must unselect one of the following:</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn modalBtn" id="keepCurrent" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal -->
+    
+    <!-- container -->
+    <div id="container" class="container-fluid">
+      <div class="row" id="mainContainer"></div>
+
+    </div>
+    <!-- container -->
+
+    <div class="loader"></div>
+
+
+    <script src="main.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+  </body>
+</html>
